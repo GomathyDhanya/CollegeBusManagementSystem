@@ -1,0 +1,17 @@
+{
+    
+        
+    "1":{
+        "title":"Late Arrival",
+        "date":"28/4/2023",
+        "BusId":"B01",
+        "description":"Bus B01 will arrive 20 minutes late to the stop A due to a vehicle breakdown."
+    },
+    "2":{
+        "title":"Cancellation of Bus B02",
+        "date":"26/4/2023",
+        "BusId":"B02",
+        "description":"Due to incessant rains in the area and bad road conditions, Bus B02 will be cancelled on 26/04/2023."
+    }
+
+}

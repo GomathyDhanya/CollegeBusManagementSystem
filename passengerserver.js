@@ -26,4 +26,26 @@ if (user && role==='passenger') {
     }
 });
 
+app.get('/announcements', function(req, res) {
+  const user = req.session.user;
+  const role = req.session.role;
+  
+  if (user && role==='passenger') {
+      res.sendFile(path.join(__dirname, '/views/passenger/pannounce.html'));
+      } else {
+      res.sendFile(path.join(__dirname, '/views/index.html'));
+      }
+  });
+
+  app.get('/complaints', function(req, res) {
+    const user = req.session.user;
+    const role = req.session.role;
+    
+    if (user && role==='passenger') {
+        res.sendFile(path.join(__dirname, '/views/passenger/pcomplaints.html'));
+        } else {
+        res.sendFile(path.join(__dirname, '/views/index.html'));
+        }
+    });
+
 module.exports=app

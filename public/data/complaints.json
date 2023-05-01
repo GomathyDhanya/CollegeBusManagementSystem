@@ -1,0 +1,19 @@
+{
+    
+        
+    "1":{
+        "title":"Late Bus",
+        "date":"28/4/2023",
+        "BusId":"B01",
+        "description":"Bus B01 always arrives 20 minutes late to the stop A.",
+        "resolved":false
+    },
+    "2":{
+        "title":"Overcrowded Bus",
+        "date":"26/4/2023",
+        "BusId":"B02",
+        "description":"The bus B02 is always overcrowded, making it difficult to find a seat.",
+        "resolved":false
+    }
+
+}

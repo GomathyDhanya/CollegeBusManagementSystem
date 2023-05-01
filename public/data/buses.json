@@ -1,0 +1,22 @@
+{
+    
+        
+        "B01":{
+            "route": [
+                {"busstop": "A", "time": "08:00"},
+                {"busstop": "B", "time": "08:10"},
+                {"busstop": "C", "time": "08:20"},
+                {"busstop": "D", "time": "08:30"}
+            ]
+        },
+        "B02":{
+            
+            "route": [
+                {"busstop": "E", "time": "09:00"},
+                {"busstop": "F", "time": "09:10"},
+                {"busstop": "G", "time": "09:20"},
+                {"busstop": "H", "time": "09:30"}
+            ]
+        }
+    
+}

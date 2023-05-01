@@ -1,0 +1,111 @@
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:40px;
+    background-color: #1E212D;
+    
+}
+
+.logosym{
+    color: white;
+    font-size: 30px !important;
+}
+
+#burmenu{
+    display: none;
+}
+
+
+.links{
+    display: flex;
+    gap:20px;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.links a::after{
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color:#F2A154;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.links a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  @media screen and (max-width:1000px){
+
+    #burmenu{
+        display: block;
+        color: white;
+        z-index: 3;
+        font-size: 30px !important;
+    }
+
+
+
+    .navlinks{
+        position: relative;
+        top: 0;
+        right: 0;
+        width: auto;
+        
+    }
+
+    .links{
+        display: none;
+        position: absolute;
+        width: 50vw;
+        top:30px;
+        right: 0;
+        
+        
+    }
+
+    .links a{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        background-color: #F2A154;
+        padding: 20px;
+        
+
+    }
+
+    .links a:hover::after{
+        background-color:white;
+
+    }
+
+    .navlinks:hover .links{
+        display: block;
+        background-color: #F2A154;
+        
+    }
+
+    
+
+}
+
