@@ -1,19 +1,12 @@
 {
-    
-        
-    "1":{
-        "title":"Late Bus",
-        "date":"28/4/2023",
-        "BusId":"B01",
-        "description":"Bus B01 always arrives 20 minutes late to the stop A.",
-        "resolved":false
-    },
-    "2":{
-        "title":"Overcrowded Bus",
-        "date":"26/4/2023",
-        "BusId":"B02",
-        "description":"The bus B02 is always overcrowded, making it difficult to find a seat.",
-        "resolved":false
+    "CiSSB":
+    {
+    "name":"Gomathy Dhanya",
+    "digitalid":"gomathydhanya2010157@ssn.edu.in",
+    "type":"Bus Infrastructure",
+    "subject":"Poor conditions of bus 28",
+    "description":"Bus 28 is very dirty. The windows leak. Mushrooms grow on the seats. and the floor is hardly clean.",
+    "resolved":false
     }
 
 }

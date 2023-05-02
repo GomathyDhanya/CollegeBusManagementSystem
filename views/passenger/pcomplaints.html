@@ -24,14 +24,39 @@
         </nav>
         <main>
             <h1>Complaints</h1>
-            <div id="complaints">
+            <form id="complaints" action="/passenger/addcomplaint" method="POST">
                 
-            </div>
+                <label for="name">Name </label>
+                <input type="text" placeholder="Name" name="name" id="name" required>
+                <label for="digitalid">Digital Id </label>
+                <input type="text" placeholder="XXXXXX" name="digitalid" id="digitalid" required>
+
+                <label for="type" >Type of complaint</label>
+                <select name="type" id="type" required>
+                <option value="" disabled selected>Choose a type of complaint</option>
+                <option value="Bus Infrastructure">Bus Infrastructure</option>
+                <option value="Bus Timing">Bus Timing</option>
+                <option value="Driver Conduct">Driver Conduct</option>
+                <option value="Others">Others</option>
+                </select>
+
+                <label for="subject">Subject of complaint </label>
+                <input type="text" placeholder="subject" name="subject" id="subject" required>
+
+                <label for="description">Description of the complaint</label>
+                <textarea placeholder="Explain in detail" name="description" id="description"></textarea>
+
+                <div>
+                <button class="btn" type="submit">Submit</button>
+                <button type="reset" value="reset" class="btn">Clear</button>
+                </div>
+                
+            </form>
         </main>
         <footer>
 
         </footer>
         
     </body>
-    <script src="/logic/complaintlogic.js"></script>
+   
 </html>
