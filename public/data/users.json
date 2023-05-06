@@ -1,0 +1,39 @@
+{
+    "2010039": {
+        "name": "Krithika Swaminathan",
+        "role": "admin",
+        "email": "krith@test.com",
+        "password": "12345"
+    },
+    "2010090": {
+        "digitalid": "2010090",
+        "name": "G L Gayathri",
+        "role": "passenger",
+        "email": "gayathri@test.com",
+        "password": "gay"
+    },
+    "0000001": {
+        "name": "John Doe",
+        "role": "admin",
+        "email": "john@example.com",
+        "password": "password"
+    },
+    "0000002": {
+        "name": "John Doe",
+        "role": "passenger",
+        "email": "john@example.com",
+        "password": "password"
+    },
+    "0000003": {
+        "name": "John Doe",
+        "role": "coordinator",
+        "email": "john@example.com",
+        "password": "password"
+    },
+    "0000004": {
+        "name": "John Doe",
+        "role": "maintenance",
+        "email": "john@example.com",
+        "password": "password"
+    }
+}

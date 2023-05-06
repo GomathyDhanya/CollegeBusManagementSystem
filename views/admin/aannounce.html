@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Coordinator Make Announcement</title>
+        <title>Admin Make Announcement</title>
         <meta charset="UTF-8">
         <meta name="description" content="Login">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles/coordann.css">
+        <link rel="stylesheet" href="/styles/adminann.css">
         <link rel="stylesheet" href="/styles/navcss.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
@@ -17,16 +17,18 @@
             <div class="navlinks">
                 <span class="material-symbols-outlined burger" id="burmenu">menu</span>
                 <div class="links">
-                    <a href="/coordinator">Schedule</a>
-                    <a href="/coordinator/announcements">Make Announcement</a>
-                    <a href="/coordinator/viewannouncements">View Announcements</a>
-                    <a href="/coordinator/complaints">Complaints</a>
+                    <a href="/admin">Schedule</a>
+                    <a href="/admin/announcements">Make Announcement</a>
+                    <a href="/admin/viewannouncements">View Announcements</a>
+                    <a href="/admin/complaints">Register Complaint</a>
+                    <a href="/admin/viewcomplaints">View Complaints</a>
+                    <a href="/admin/adduser">Add User</a>
                 </div>
             </div>
         </nav>
         <main>
             <h1>Announcements</h1>
-            <form id="ann_form" action="/coordinator/addannouncement" method="POST">
+            <form id="ann_form" action="/admin/addannouncement" method="POST">
                 <label for="dig_id">Digital ID </label>
                     <input type="text" placeholder="XXXXXX" id="dig_id" name="dig_id" required autofocus>
 
@@ -42,6 +44,8 @@
 
                 <label for="ann_type">Type of Announcement </label>
                     <select name="ann_type" id="ann_type" >
+                        <option value="Website Update">Website Update</option>
+                        <option value="Website Service Issue">Website Service Issue</option>
                         <option value="Temporary Change in Schedule">Temporary Change in Schedule</option>
                         <option value="Temporary Change in Bus Route">Temporary Change in Bus Route</option>
                         <option value="Temporary Unavailability of Bus">Temporary Unavailability of Bus</option>
@@ -63,5 +67,4 @@
         
     </body>
     <script src="/logic/announcelogic.js"></script>
-   
 </html>

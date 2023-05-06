@@ -99,6 +99,11 @@ th,td{
     padding: 10px; 
 
 }
+
+.schdbuses table th:first-child, td:first-child{
+    width: 10%;
+} 
+
 p{
     color: white;
 }

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+body{
+    background-color: #1E212D;
+}
+
+h1{
+    color:#F2A154;
+}
+
+.btn{
+    background-color: #F2A154;
+    color: #1E212D;
+    border: none;
+    padding:10px;
+    width: 100px; 
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.schedule{
+    width: 80%;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:50px;
+    
+}
+  
+.schdinput{
+    background-color: white;
+    padding:50px;
+}
+
+.schdmain,.schdinput,.schdbuses{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+
+.schdinput div{
+    display: flex;
+    flex-direction: column;
+}
+
+details{
+    background-color:  #F2A154;
+    padding: 10px;
+
+}
+
+summary{
+    padding: 10px;
+}
+
+table,td,th{
+    border: 2px solid #F2A154;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+th,td{
+    font-weight: 500;  
+    text-align: left; 
+    padding: 10px; 
+
+}
+
+.schdbuses table th:first-child, td:first-child{
+    width: 10%;
+} 
+
+p{
+    color: white;
+}
+
+footer{
+    background-color: #1E212D;
+    height: 50px;
+}

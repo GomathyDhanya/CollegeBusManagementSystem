@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Coordinator Announcement Added</title>
+        <title>Maintenance View Announcements</title>
         <meta charset="UTF-8">
         <meta name="description" content="Login">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles/adminann.css">
+        <link rel="stylesheet" href="/styles/passann.css">
         <link rel="stylesheet" href="/styles/navcss.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
@@ -17,18 +17,16 @@
             <div class="navlinks">
                 <span class="material-symbols-outlined burger" id="burmenu">menu</span>
                 <div class="links">
-                    <a href="/coordinator">Schedule</a>
-                    <a href="/coordinator/announcements">Make Announcement</a>
-                    <a href="/coordinator/viewannouncements">View Announcements</a>
-                    <a href="/coordinator/complaints">Complaints</a>
+                    <a href="/maintenance">Schedule</a>
+                    <a href="/maintenance/announcements">Announcements</a>
+                    <a href="/maintenance/complaints">Complaints</a>
                 </div>
             </div>
         </nav>
         <main>
-            
-            <h1>Announcement Added</h1>
-            <div id="ack">
-            <p>Your announcement has been added. Passengers will be notified of the announcement immediately.</p>
+            <h1>Announcements</h1>
+            <div id="announcements">
+                
             </div>
         </main>
         <footer>
@@ -36,4 +34,5 @@
         </footer>
         
     </body>
+    <script src="/logic/announcelogic.js"></script>
 </html>

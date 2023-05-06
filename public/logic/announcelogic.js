@@ -5,18 +5,23 @@ fetch('/data/announcements.json')
             for (const [id, announcement] of Object.entries(data)) {
                 const details = document.createElement('details');
                 const summary = document.createElement('summary');
-                summary.textContent = announcement.title;
+                summary.textContent = announcement.ann_title;
                 details.appendChild(summary);
                 const body = document.createElement('div');
                 const date = document.createElement('p');
                 date.textContent = `Date: ${announcement.date}`;
                 body.appendChild(date);
-                const busId = document.createElement('p');
-                busId.textContent = `Bus ID: ${announcement.BusId}`;
-                body.appendChild(busId);
+                const annType = document.createElement('p');
+                annType.textContent = `Category: ${announcement.ann_type}`;
+                body.appendChild(annType);
                 const description = document.createElement('p');
-                description.textContent = `Description: ${announcement.description}`;
+                description.textContent = `Announcement: ${announcement.ann_content}`;
                 body.appendChild(description);
+                const brk = document.createElement('br');
+                body.appendChild(brk);
+                const aname = document.createElement('p');
+                aname.textContent = `Announcement made by: ${announcement.name}`;
+                body.appendChild(aname);
                 details.appendChild(body);
                 announcementsContainer.appendChild(details);
             }

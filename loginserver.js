@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const fs = require('fs');
 
 const app=express()
 
@@ -61,9 +62,27 @@ app.listen(8080,()=>{
     console.log('server is listening on 8080')
 })
 
+/*
 function isValidUser(email, password, role) {
     return email === 'john@example.com' && password === 'password' && role === 'admin'
     ||email === 'john@example.com' && password === 'password' && role === 'passenger'
     ||email === 'john@example.com' && password === 'password' && role === 'coordinator'
     ||email === 'john@example.com' && password === 'password' && role === 'maintenance';
   }
+*/
+
+function isValidUser(email, password, role) {
+    // read existing data from users.json
+    const data = JSON.parse(fs.readFileSync('public/data/users.json', 'utf8'));
+
+    // loop through the data to find a user that matches the email, password, and role
+    for (const key in data) {
+        const user = data[key];
+        if (user.email === email && user.password === password && user.role === role) {
+            return true;
+        }
+    }
+
+    // no matching user found, return false
+    return false;
+}
