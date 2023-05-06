@@ -1,12 +1,1 @@
-{
-    "CiSSB":
-    {
-    "name":"Gomathy Dhanya",
-    "digitalid":"gomathydhanya2010157@ssn.edu.in",
-    "type":"Bus Infrastructure",
-    "subject":"Poor conditions of bus 28",
-    "description":"Bus 28 is very dirty. The windows leak. Mushrooms grow on the seats. and the floor is hardly clean.",
-    "resolved":false
-    }
-
-}
+{"CiSSB":{"name":"Gomathy Dhanya","digitalid":"gomathydhanya2010157@ssn.edu.in","type":"Bus Infrastructure","subject":"Poor conditions of bus 28","description":"Bus 28 is very dirty. The windows leak. Mushrooms grow on the seats. and the floor is hardly clean.","resolved":"true"},"CFy1B":{"name":"Krithika","digitalid":"krithika@gmail.com","type":"Bus Timing","subject":"dirty","description":"always dirty","resolved":"true"},"CX8iz":{"name":"gom","digitalid":"hu","type":"Driver Conduct","subject":"bad","description":"bad","resolved":"false"}}

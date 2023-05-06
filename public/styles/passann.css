@@ -33,7 +33,7 @@ main{
 }
 
 
-#announcements{
+#announcements,#complaints{
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -57,4 +57,30 @@ details{
 
 summary{
     padding: 10px;
+    display: flex;
+    gap:10px;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.btn{
+    background-color: #F2A154;
+    color: #1E212D;
+    border: none;
+    padding:10px;
+    width: 100px; 
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.check{
+
+        font-size: 30px !important;
+
 }
