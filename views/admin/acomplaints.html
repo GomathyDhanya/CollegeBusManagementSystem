@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Admin Register Complaint</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Login">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/passcom.css">
+        <link rel="stylesheet" href="/styles/navcss.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+
+    <body>
+        <nav>
+            <div class="logo">
+                <span class="material-symbols-outlined logosym">departure_board</span>
+            </div>
+            <div class="navlinks">
+                <span class="material-symbols-outlined burger" id="burmenu">menu</span>
+                <div class="links">
+                    <a href="/admin">Schedule</a>
+                    <a href="/admin/announcements">Make Announcement</a>
+                    <a href="/admin/viewannouncements">View Announcements</a>
+                    <a href="/admin/complaints">Register Complaint</a>
+                    <a href="/admin/viewcomplaints">View Complaints</a>
+                    <a href="/admin/adduser">Add User</a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <h1>Complaints</h1>
+            <form id="complaints" action="/admin/addcomplaint" method="POST">
+                
+                <label for="name">Name </label>
+                <input type="text" placeholder="Name" name="name" id="name" required>
+                <label for="digitalid">Digital Id </label>
+                <input type="text" placeholder="XXXXXX" name="digitalid" id="digitalid" required>
+
+                <label for="type" >Type of complaint</label>
+                <select name="type" id="type" required>
+                <option value="" disabled selected>Choose a type of complaint</option>
+                <option value="Bus Infrastructure">Bus Infrastructure</option>
+                <option value="Bus Timing">Bus Timing</option>
+                <option value="Driver Conduct">Driver Conduct</option>
+                <option value="Others">Others</option>
+                </select>
+
+                <label for="subject">Subject of complaint </label>
+                <input type="text" placeholder="subject" name="subject" id="subject" required>
+
+                <label for="description">Description of the complaint</label>
+                <textarea placeholder="Explain in detail" name="description" id="description"></textarea>
+
+                <div>
+                <button class="btn" type="submit">Submit</button>
+                <button type="reset" value="reset" class="btn">Clear</button>
+                </div>
+                
+            </form>
+        </main>
+        <footer>
+
+        </footer>
+        
+    </body>
+   
+</html>

@@ -1,9 +1,10 @@
 <html>
     <head>
+        <title>Coordinator Make Announcement</title>
         <meta charset="UTF-8">
         <meta name="description" content="Login">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles/passcom.css">
+        <link rel="stylesheet" href="/styles/coordann.css">
         <link rel="stylesheet" href="/styles/navcss.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
@@ -17,28 +18,43 @@
                 <span class="material-symbols-outlined burger" id="burmenu">menu</span>
                 <div class="links">
                     <a href="/coordinator">Schedule</a>
-                    <a href="/coordinator/announcements">Announcements</a>
+                    <a href="/coordinator/announcements">Make Announcement</a>
+                    <a href="/coordinator/viewannouncements">View Announcements</a>
+                    <a href="/coordinator/complaints">Complaints</a>
                 </div>
             </div>
         </nav>
         <main>
             <h1>Announcements</h1>
-            <form id="announcements" action="/coordinator/addannouncement" method="POST">
-                
-                <label for="busno">Bus number </label>
-                <input type="text" placeholder="bus" name="busno" id="busno" required>
+            <form id="ann_form" action="/coordinator/addannouncement" method="POST">
+                <label for="dig_id">Digital ID </label>
+                    <input type="text" placeholder="XXXXXX" id="dig_id" name="dig_id" required autofocus>
 
-                <label for="subject">Subject of announcement </label>
-                <input type="text" placeholder="subject" name="subject" id="subject" required>
 
-                <label for="description">Description of the announcement</label>
-                <textarea placeholder="Explain in detail" name="description" id="description"></textarea>
+                <label for="name">Name of Announcer </label>
+                    <input type="text" placeholder="Name" id="name" name="name" required>
+
+                <label for="date">Date of Announcement </label>
+                    <input type="date" placeholder="DD/MM/YYYY" id="date" name="date" required>
+
+                <label for="ann_title">Title of Announcement </label>
+                    <input type="text" placeholder="Title" id="ann_title" name="ann_title" required>
+
+                <label for="ann_type">Type of Announcement </label>
+                    <select name="ann_type" id="ann_type" >
+                        <option value="Temporary Change in Schedule">Temporary Change in Schedule</option>
+                        <option value="Temporary Change in Bus Route">Temporary Change in Bus Route</option>
+                        <option value="Temporary Unavailability of Bus">Temporary Unavailability of Bus</option>
+                        <option value="Others">Others</option>
+                    </select>
+
+                <label for="ann_content">Announcement </label>
+                    <textarea id="ann_content" name="ann_content" placeholder="Type your announcement here..." rows="5" cols="50" required></textarea>
 
                 <div>
-                <button class="btn" type="submit">Submit</button>
-                <button type="reset" value="reset" class="btn">Clear</button>
+                    <button type="submit" class="btn" id="submitbutton" value="submit">Submit</button>
+                    <button type="reset" class="btn" id="resetbutton" value="clear">Clear</button>
                 </div>
-                
             </form>
         </main>
         <footer>
@@ -46,5 +62,6 @@
         </footer>
         
     </body>
+    <script src="/logic/announcelogic.js"></script>
    
 </html>

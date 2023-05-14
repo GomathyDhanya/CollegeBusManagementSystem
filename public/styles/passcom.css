@@ -33,7 +33,7 @@ main{
 }
 
 
-#complaints,#ack,#announcements{
+#complaints,#ack{
     display: flex;
     flex-direction: column;
     gap:20px;

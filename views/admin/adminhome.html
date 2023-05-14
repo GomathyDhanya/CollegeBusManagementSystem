@@ -1,20 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Admin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <nav>
-        <div class="logo">
-            <img src="/pics/logo.png">
-        </div>
-        <div class="links">
-            <a href="/schedule">Schedule</a>
-            <a href="/announcements">Announcements</a>
-            <a href="/complaints">Complaints</a>
-            <a href="/adduser">Add User</a>
-        </div>
-    </nav>
-</body>
+    <head>
+        <title>Admin Home</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Login">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/adminhome.css">
+        <link rel="stylesheet" href="/styles/navcss.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+
+    <body>
+        <nav>
+            <div class="logo">
+                <span class="material-symbols-outlined logosym">departure_board</span>
+            </div>
+            <div class="navlinks">
+                <span class="material-symbols-outlined burger" id="burmenu">menu</span>
+                <div class="links">
+                    <a href="/admin">Schedule</a>
+                    <a href="/admin/announcements">Make Announcement</a>
+                    <a href="/admin/viewannouncements">View Announcements</a>
+                    <a href="/admin/complaints">Register Complaint</a>
+                    <a href="/admin/viewcomplaints">View Complaints</a>
+                    <a href="/admin/adduser">Add User</a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <h1>Schedule</h1>
+            <div class="schedule">
+                
+                <div class="schdmain">
+                    <div class="schdinput">
+                        <div>
+                            <label for="source">Your Location </label>
+                            <input type="text" name="source" id="source">
+                        </div>
+                        <div>
+                            <label for="destination">Destination </label>
+                            <input type="text" name="destination" id="destination">
+                        </div>
+                        <button class="btn" id="searchbtn" onclick="searchRoutes()">Search</button>
+                    </div>
+                    <div class="heading">
+                        <p>Available Buses</p>
+                        <button type="button" class="bus_btn" id="addbusbtn" value="add_bus" onclick="addBusRoute()"><img src="pics/addtolist.png" alt="Add Bus Route"></button>
+                    </div>
+                    <div id="new_bus_form" class="sch_new_bus_hidden">
+                        <p>New Bus Details</p>
+                        <form id="sch_form" action="/admin/addnewbus" method="POST">
+                            <div class="row">
+                                <label for="bus_no">Bus No.</label>
+                                <input type="number" id="bus_no" name="bus_no" required>
+                            </div>
+
+                            <ul id="new_bus_route">
+                                <li>
+                                    <div class="waypt">
+                                        <div class="fold">
+                                            <label for="time">Time</label>
+                                            <input type="text" class="time" name="time[0]" required>
+                                        </div>
+                                        <div class="fold">
+                                            <label for="loc">Bus Stop</label>
+                                            <input type="text" class="loc" name="loc[0]" required>
+                                        </div>
+                                        <div class="smallright">
+                                            <button type="button" class="rt_btn" value="add_waypt" onclick="addWaypoint(this.parentNode.parentNode)"><img src="pics/add-point1.png" alt="Add Waypoint"></button>
+                                            <button type="button" class="rt_btn" value="del_waypt" onclick="delWaypoint()"><img src="pics/bin.png" alt="Delete Waypoint"></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="btns">
+                                <button type="submit" class="btn" id="submitbusbtn" value="submit" onclick="submitBusDetails()">Save</button>
+                                <button type="reset" class="btn" id="rstformbtn" value="clear">Clear</button>
+                                <button type="button" class="btn" id="hideformbtn" value="hide" onclick="hideBusForm()">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="schdbuses" id="bus-list">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+
+    <script src="/logic/updateschlogic.js"></script>
 </html>

@@ -1,0 +1,15 @@
+#adduser {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 80%;
+    background-color: white;
+    padding:50px;
+}
+
+.roles{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    padding: 15px;
+}

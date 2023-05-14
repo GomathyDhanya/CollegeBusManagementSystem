@@ -39,28 +39,75 @@ app.get('/announcements', function(req, res) {
       }
   });
 
-  app.post('/addannouncement', (req, res) => {
+app.get('/viewannouncements', function(req, res) {
+  const user = req.session.user;
+  const role = req.session.role;
+  
+  if (user && role==='coordinator') {
+      res.sendFile(path.join(__dirname, '/views/coordinator/coorviewann.html'));
+      } else {
+      res.sendFile(path.join(__dirname, '/views/index.html'));
+      }
+  });
+
+  app.get('/complaints', function(req, res) {
+    const user = req.session.user;
+    const role = req.session.role;
     
-    const { busno, subject, description } = req.body;
+    if (user && role==='coordinator') {
+        res.sendFile(path.join(__dirname, '/views/coordinator/coorcomplaints.html'));
+        } else {
+        res.sendFile(path.join(__dirname, '/views/index.html'));
+        }
+    });
+
+app.post('/addannouncement', (req, res) => {
+  // extract data from request body
+  const { dig_id, name, date, ann_title, ann_type, ann_content } = req.body;
+
+  // create JSON object from extracted data
+  const announcement = {
+    dig_id,
+    name,
+    date,
+    ann_title,
+    ann_type,
+    ann_content
+  };
+
+  // read existing data from announcements.json
+  const data = JSON.parse(fs.readFileSync('public/data/announcements.json', 'utf8'));
+
+  const id = shortid.generate().substring(0, 4);
+  while (data[id]) {
+    id = shortid.generate().substring(0, 4);
+  }
+
+  // add new complaint to existing data with the unique ID as the key
+  data['A'+id] = announcement;
+  // write updated data to complaints.json
+  fs.writeFileSync('public/data/announcements.json', JSON.stringify(data));
+
+  // send response to client
+  res.status(200).sendFile(path.join(__dirname, '/views/coordinator/announcementadded.html'));
+});
+
+  app.post('/addcomplaint', (req, res) => {
+    // extract data from request body
+    const { name, digitalid, type, subject, description } = req.body;
   
-    let ts = Date.now();
-
-    let date_ob = new Date(ts);
-    let date = date_ob.getDate();
-    let month = date_ob.getMonth() + 1;
-    let year = date_ob.getFullYear();
-
-    d=year + "-" + month + "-" + date
-
-    const announcement = {
-      "title":subject,
-      "date":d,
-      "BusId":busno,
-      "description":description,
+    // create JSON object from extracted data
+    const complaint = {
+      name,
+      digitalid,
+      type,
+      subject,
+      description,
+      "resolved":false
     };
-
   
-    const data = JSON.parse(fs.readFileSync('public/data/announcements.json', 'utf8'));
+    // read existing data from complaints.json
+    const data = JSON.parse(fs.readFileSync('public/data/complaints.json', 'utf8'));
 
     const id = shortid.generate().substring(0, 4);
 
@@ -68,11 +115,14 @@ app.get('/announcements', function(req, res) {
       id = shortid.generate().substring(0, 4);
     }
   
-    data['A'+id] = announcement;
+    // add new complaint to existing data with the unique ID as the key
+    data['C'+id] = complaint;
   
-    fs.writeFileSync('public/data/announcements.json', JSON.stringify(data));
+    // write updated data to complaints.json
+    fs.writeFileSync('public/data/complaints.json', JSON.stringify(data));
   
-    res.status(200).sendFile(path.join(__dirname, '/views/coordinator/announcementadded.html'));
+    // send response to client
+    res.status(200).sendFile(path.join(__dirname, '/views/coordinator/complaintadded.html'));
   });
   
 

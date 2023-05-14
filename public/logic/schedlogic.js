@@ -2,40 +2,39 @@
 
 function create_bus(busId,busData){
     const details = document.createElement("details");
-            const summary = document.createElement("summary");
-            summary.textContent = busId;
-            details.appendChild(summary);
-            const table = document.createElement("table");
-            const thead = document.createElement("thead");
-            const tr = document.createElement("tr");
-            const th1 = document.createElement("th");
-            const th2 = document.createElement("th");
-            th1.textContent = "Bus Stop";
-            th2.textContent = "Time";
-            tr.appendChild(th1);
-            tr.appendChild(th2);
-            
-            thead.appendChild(tr);
-            table.appendChild(thead);
-            const tbody = document.createElement("tbody");
-            for (const routeData of busData.route) {
-                const tr = document.createElement("tr");
-                const td1 = document.createElement("td");
-                const td2 = document.createElement("td");
-                td1.textContent = routeData.busstop;
-                td2.textContent = routeData.time;
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-                tr.setAttribute('data-id',routeData.busstop);
-                tbody.appendChild(tr);
-            }
-            table.appendChild(tbody);
-            details.appendChild(table);
-            details.classList.add("bus")
+    const summary = document.createElement("summary");
+    summary.textContent = busId;
+    details.appendChild(summary);
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+    const th1 = document.createElement("th");
+    const th2 = document.createElement("th");
+    th1.textContent = "Time";
+    th2.textContent = "Bus Stop";
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    thead.appendChild(tr);
+    table.appendChild(thead);
+    const tbody = document.createElement("tbody");
+    for (const routeData of busData.route) {
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        const td2 = document.createElement("td");
+        td1.textContent = routeData.time;
+        td2.textContent = routeData.busstop;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.setAttribute('data-id',routeData.busstop);
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    details.appendChild(table);
+    details.classList.add("bus");
 
-            return details
-
+    return details;
 }
+
 
 
 

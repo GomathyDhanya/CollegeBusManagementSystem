@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+body{
+    background-color: #1E212D;
+}
+
+h1{
+    color:#F2A154;
+}
+
+.btn{
+    background-color: #F2A154;
+    color: #1E212D;
+    border: none;
+    padding:10px;
+    width: 100px; 
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover,.bus_btn:hover,#addbusbtn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+button{
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.bus_btn {
+    border-radius: 2px;
+    padding: 3px;
+    margin: 1px;
+    transition: all 0.5s ease-in-out;
+}
+
+.bus_btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.bus_btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.busdel_btn {
+
+    border-radius: 2px;
+    float: right;
+    padding: 3px;
+    margin: 1px;
+    transition: all 0.5s ease-in-out;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.busdel_btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.busdel_btn img {
+    width: 18px;
+    height: 18px;
+}
+
+button{
+    border: none;
+}
+
+#addbusbtn {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    transition: all 0.5s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:20px;
+}
+
+#addbusbtn img alt{
+    background-color: white;
+    width: 180px;
+}
+
+.rt_btn {
+
+    border-radius: 2px;
+    padding: 3px;
+    transition: all 0.5s ease-in-out;
+}
+
+.rt_btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.rt_btn img {
+    width: 16px;
+    height: 16px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.schedule{
+    width: 80%;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:50px;
+    
+}
+  
+.schdinput{
+    background-color: white;
+    padding:50px;
+}
+
+.schdmain,.schdinput,.schdbuses{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.schdinput div{
+    display: flex;
+    flex-direction: column;
+}
+
+details{
+    background-color:  #F2A154;
+    padding: 10px;
+
+}
+
+summary{
+    padding: 10px;
+}
+
+table,td,th{
+    border: 2px solid #F2A154;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,td{
+    font-weight: 500;  
+    text-align: left; 
+    padding: 10px; 
+
+}
+
+.schdbuses table th:first-child, td:first-child{
+    width: 10%;
+}
+
+p{
+    color: white;
+}
+
+.sch_new_bus_hidden {
+    display: none;
+}
+
+.sch_new_bus {
+    width: 100%;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    padding:50px;
+    background-color: white;
+}
+
+.sch_new_bus p{
+    color:#F2A154;
+    align-self: center;
+}
+
+
+#new_bus_route {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+#new_bus_route li{
+    margin-top: 20px;
+}
+
+.btns{
+    display: flex;
+    gap:10px;
+    align-self: right;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+#sch_form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+#bus_no{
+    width: 100%;
+}
+
+
+footer{
+    background-color: #1E212D;
+    height: 50px;
+    
+}
+
+.waypt{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+@media screen and (max-width:1000px){
+
+    .waypt .fold{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+
+
+
+
+

@@ -30,6 +30,17 @@ if (user && role==='maintenance') {
     }
 });
 
+app.get('/announcements', function(req, res) {
+  const user = req.session.user;
+  const role = req.session.role;
+  
+  if (user && role==='maintenance') {
+      res.sendFile(path.join(__dirname, '/views/maintenance/maintenanceann.html'));
+      } else {
+      res.sendFile(path.join(__dirname, '/views/index.html'));
+      }
+  });
+
 app.get('/complaints', function(req, res) {
   const user = req.session.user;
   const role = req.session.role;
